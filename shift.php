@@ -55,7 +55,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="blank">
       <div class="blankpage-main">
         <h2>Shift</h2>
-        <a class="btn btn-warning btn_tmbahuser" href="Tambahstaf.php">Tambah shift</a><br><br>
+        <a class="btn btn-warning btn_tmbahuser" href="tambahshift.php">Tambah shift</a><br><br>
         <div class="table-responsive">
                 <table class="table table-hover" id="table">
                       <thead>
@@ -96,7 +96,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                               <a href="updateshift.php?id=<?php echo $row["ID_SHIFT"];?>">Update</a>
                             </td>
                             <td>
-                              <a onclick="deleteshift(<?php echo $row["ID_SHIFT"];?>)" href="#">Delete</a>
+                              <a onclick="deleteTable('<?= $row["ID_SHIFT"] ?>','ID_SHIFT','shift')" href="#">Delete</a>
                             </td>
                         </tr>
                       <?php
@@ -141,15 +141,6 @@ $(".sidebar-icon").click(function() {
                 toggle = !toggle;
 });
 
-function deletestaf(id)
-      {
-        var txt;
-        var r = confirm("Apakah anda yakin ingin menghapus user ini?");
-        if (r == true) {
-            window.location="deletestaf.php?id="+id;
-        } else {
-        }
-      }
 </script>
 <?php
   include "js.php";

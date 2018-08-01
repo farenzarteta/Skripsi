@@ -1,7 +1,7 @@
 <script>
 	function deleteTable(id, by, tablename) {
 	    var txt;
-	    var r = confirm("Apakah anda yakin ingin menghapus user ini?");
+	    var r = confirm("Apakah anda yakin ingin menghapus?");
 	    if (r == true) {
 	        window.location="delete.php?id="+id+"&by="+by+"&tablename="+tablename;
 	    } else {
