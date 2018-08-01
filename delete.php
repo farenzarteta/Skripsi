@@ -5,5 +5,5 @@
   $tablename=$_GET["tablename"];
   $q="DELETE FROM $tablename WHERE $by='$id'";
   mysqli_query($con,$q);
-  header("location:jadwalshift.php");
+  header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

@@ -94,7 +94,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                               <a href="updatelibur.php?id=<?php echo $row["ID_HARILIBUR"];?>">Update</a>
                             </td>
                             <td>
-                              <a onclick="deletelibur(<?php echo $row["ID_HARILIBUR"];?>)" href="#">Delete</a>
+                              <a onclick="deleteTable('<?= $row["ID_HARILIBUR"] ?>','ID_HARILIBUR','hari_libur')" href="#">Delete</a>
                             </td>
                         </tr>
                       <?php
@@ -136,15 +136,6 @@ $(".sidebar-icon").click(function() {
                 toggle = !toggle;
 });
 
-function deletelibur(id)
-      {
-        var txt;
-        var r = confirm("Apakah anda yakin ingin menghapus hari libur ini?");
-        if (r == true) {
-            window.location="deletelibur.php?id="+id;
-        } else {
-        }
-      }
 </script>
 <?php
 	include "js.php";

@@ -101,7 +101,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                               <a href="updateuser.php?id=<?php echo $row["ID_USER"];?>">Update</a>
                             </td>
                             <td>
-                              <a onclick="deleteuser(<?php echo $row["ID_USER"];?>)" href="#">Delete</a>
+                              <a onclick="deleteTable('<?= $row["ID_USER"] ?>','ID_USER','user_staf')" href="#">Delete</a>
                             </td>
                         </tr>
                       <?php
@@ -143,15 +143,6 @@ $(".sidebar-icon").click(function() {
                 toggle = !toggle;
 });
 
-function deleteuser(id)
-      {
-        var txt;
-        var r = confirm("Apakah anda yakin ingin menghapus user ini?");
-        if (r == true) {
-            window.location="deleteuser.php?id="+id;
-        } else {
-        }
-      }
 </script>
 <?php
   include "js.php";

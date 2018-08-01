@@ -106,7 +106,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                               <a href="updatesanksi.php?id=<?php echo $row["ID_SANKSI"];?>">Update</a>
                             </td>
                             <td>
-                              <a onclick="deletesanksi(<?php echo $row["ID_SANKSI"];?>)" href="#">Delete</a>
+                              <a onclick="deleteTable('<?= $row["ID_SANKSI"] ?>','ID_SANKSI','sanksi')" href="#">Delete</a>
                             </td>
                         </tr>
                       <?php
@@ -148,15 +148,6 @@ $(".sidebar-icon").click(function() {
                 toggle = !toggle;
 });
 
-function deletesanksi(id)
-      {
-        var txt;
-        var r = confirm("Apakah anda yakin ingin menghapus sanksi ini?");
-        if (r == true) {
-            window.location="deletesanksi.php?id="+id;
-        } else {
-        }
-      }
 </script>
 <?php
 	include "js.php";
