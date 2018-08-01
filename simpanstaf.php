@@ -1,0 +1,43 @@
+ <?php
+        include "connect.php";
+
+        $nama_staf = $_POST['nama_staf'];
+        $nomor_KTP = $_POST['nomor_KTP'];
+        $jabatan = $_POST['id_jabatan'];
+        $tempat_lahir = $_POST['tempat_lahir'];
+        $tgl_lahir = $_POST['tgl_lahir'];
+        $kewarganegaraan = $_POST['kewarganegaraan'];
+        $status_ = $_POST['status_'];
+        $NPWP = $_POST['NPWP'];
+        $jenis_kelamin_staf = $_POST['gender'];
+        $alamat_sekarang = $_POST['alamat_sekarang'];
+        $RT_sekarang = $_POST['RT_sekarang'];
+        $RW_sekarang = $_POST['RW_sekarang'];
+        $kelurahan_sekarang = $_POST['kelurahan_sekarang'];
+        $kecamatan_sekarang = $_POST['kecamatan_sekarang'];
+        $kabupatenkota_sekarang = $_POST['kabupatenkota_sekarang'];
+        $alamat_KTP = $_POST['alamat_KTP'];
+        $RT_KTP = $_POST['RT_KTP'];
+        $RW_KTP = $_POST['RW_KTP'];
+        $kelurahan_KTP = $_POST['kelurahan_KTP'];
+        $kecamatan_KTP = $_POST['kecamatan_KTP'];
+        $kabupatenkota_KTP = $_POST['kabupatenkota_KTP'];
+        $telp1 = $_POST['telp1'];
+        $telp2 = $_POST['telp2'];
+        $email = $_POST['email'];
+        $nama_ayah = $_POST['nama_ayah'];
+        $nama_ibu = $_POST['nama_ibu'];
+        $sd = $_POST['sd'];
+        $smp = $_POST['smp'];
+        $sma_smk = $_POST['sma_smk'];
+        $akademi = $_POST['akademi'];
+        $universitas = $_POST['universitas'];
+        $pasca_sarjana = $_POST['pasca_sarjana'];
+        $doktoral = $_POST['doktoral'];
+        $tanggalmasuk_staf = $_POST['tanggalmasuk_staf'];
+        //echo $tanggalmasuk_staf;
+        $q="INSERT INTO staf (NAMA_STAF,ID_JABATAN,NOMOR_KTP,TEMPAT_LAHIR,TGL_LAHIR,KEWARGANEGARAAN,STATUS_,NPWP,JENIS_KELAMIN_STAF,ALAMAT_SEKARANG,RT_SEKARANG,RW_SEKARANG,KELURAHAN_SEKARANG,KECAMATAN_SEKARANG,KABUPATENKOTA_SEKARANG,ALAMAT_KTP,RT_KTP,RW_KTP,KELURAHAN_KTP,KECAMATAN_KTP,KABUPATENKOTA_KTP,TELP1,TELP2,EMAIL,NAMA_AYAH,NAMA_IBU,SD,SMP,SMA_SMK,AKADEMI,UNIVERSITAS,PASCA_SARJANA,DOKTORAL,TANGGALMASUK_STAF) VALUES ('$nama_staf','$jabatan','$nomor_KTP','$tempat_lahir','$tgl_lahir','$kewarganegaraan','$status_','$NPWP','$jenis_kelamin_staf','$alamat_sekarang','$RT_sekarang','$RW_sekarang','$kelurahan_sekarang','$kecamatan_sekarang','$kabupatenkota_sekarang','$alamat_KTP','$RT_KTP','$RW_KTP','$kelurahan_KTP','$kecamatan_KTP','$kabupatenkota_KTP','$telp1','$telp2','$email','$nama_ayah','$nama_ibu','$sd','$smp','$sma_smk','$akademi','$universitas','$pasca_sarjana','$doktoral','$tanggalmasuk_staf') ";
+        //echo $q;
+        mysqli_query($con,$q);
+        header("location:liststaf.php");
+?>
