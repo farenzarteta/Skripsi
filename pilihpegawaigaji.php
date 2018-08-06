@@ -52,66 +52,52 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="inner-block">
     <div class="blank">
     	<div class="blankpage-main">
-    		<form method="POST" action="simpanjawaban.php">
-             <input type="hidden" name="idstaff" value="<?php echo $_GET["id_staf"];?>"/>
-             <input type="hidden" name="periode" value="<?php echo $_GET["periode"];?>"/>
-            <?php
-              $q="SELECT * FROM staf WHERE ID_STAF='". $_GET["id_staf"] ."'";
-              $res=mysqli_query($con,$q);
-              $dataStaf=mysqli_fetch_assoc($res);
-
-              $q="SELECT * FROM periode_evaluasi WHERE ID_PERIODE='". $_GET["periode"] ."'";
-              $res=mysqli_query($con,$q);
-              $dataPeriode=mysqli_fetch_assoc($res);
-
-              echo "<h3 style='margin-bottom:20px'>Evaluasi ". $dataStaf["NAMA_STAF"] ." untuk periode ". $dataPeriode["NAMA"] ."</h3>";
-            ?>
-            
-            
-            
+        <h2>Pilih Karyawan</h2>
+        <a class="btn btn-warning btn_tmbahuser" href="komponengaji.php">Ubah Komponen Gaji</a><br><br>
+    		<form method="POST" action="simpanpertanyaan.php">
+            <input type="hidden" name="id" value="<?php echo $_GET["id"];?>">
             <div class="table-responsive">
                     <table class="table table-hover" id="table">
                           <thead>
                             <tr>
-                              <th scope="col">No</th>
-                              <th scope="col">PERTANYAAN</th>
+                              <th scope="col">ID</th>
+                              <th scope="col">NAMA</th>
                               <th></th>
                             </tr>
                           </thead>
                           <tbody>
                              <?php
-                              $no=1;
-                              $q="SELECT p.PERTANYAAN,p.ID_PERTANYAAN ".
-                                 "FROM pertanyaan_periode pp ".
-                                 "INNER JOIN pertanyaan p ON (p.ID_PERTANYAAN=pp.ID_PERTANYAAN) ".
-                                 "WHERE pp.ID_PERIODE='". $_GET["periode"]."'";
-
-                                 //echo $q;
+                              $q="SELECT * FROM staf";
                               $res=mysqli_query($con,$q);
                               while ($row=mysqli_fetch_assoc($res))
                               {
                                 ?>
-                                  <input type="hidden" name="id[]" value="<?php echo $row["ID_PERTANYAAN"];?>">
                                   <tr>
                                       
                                       <td>
                                         <?php
-                                          echo $no++;
+                                          echo $row["ID_STAF"];
                                         ?>
                                       </td>
                                       <td>
                                         <?php
-                                          echo $row["PERTANYAAN"];
+                                          echo $row["NAMA_STAF"];
                                         ?>
                                       </td>
                                       <td>
-                                        <select name="penilaian[]">
-                                            <option value="Sangat Buruk">Sangat tidak setuju</option>
-                                            <option value="Buruk">Tidak setuju</option>
-                                            <option value="Cukup" selected="selected">Ragu-ragu</option>
-                                            <option value="Baik">Setuju</option>
-                                            <option value="Sangat Baik">Sangat setuju</option>
-                                        </select>
+                                        <a href="tambahgaji.php?id_staf=<?php echo $row["ID_STAF"];?>">
+                                          Masukan Komponen
+                                        </a>
+                                        <!-- <?php
+                                          $q="SELECT * FROM gaji WHERE ID_STAF='". $row["ID_STAF"] ."'";
+                                          $res2=mysqli_query($con,$q);
+                                          if ($row=mysqli_fetch_assoc($res2))
+                                          {
+                                            ?>
+                                              | <a href="lihatgaji.php?id=<?php echo $row["ID_EVALUASI_KINERJA"];?>">Lihat Penilaian</a>
+                                            <?php
+                                          }
+                                        ?> -->
                                       </td>
                                   </tr>
                                 <?php
@@ -120,9 +106,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                           </tbody>        
                     </table>
                 </div>
-                <input type="hidden" name="id" value="<?php echo $_GET["id"];?>">
-                <textarea class="form-control" name="saran" placeholder="Masukkan komentar tertulis anda"></textarea><br>
-                <button type="submit" class="btn btn-default">Simpan</button>
           </form>
     	</div>
     </div>
@@ -174,7 +157,7 @@ function deleteuser(id)
 <script>
     $(document).ready(function()
       {
-        //$("#table").DataTable();
+        $("#table").DataTable();
       });
   </script>
 </body>

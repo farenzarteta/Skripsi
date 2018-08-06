@@ -55,7 +55,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="blank">
       <div class="blankpage-main">
         <h2>Jadwal Shift</h2>
-        <a class="btn btn-warning btn_tmbahuser" href="Tambahstaf.php">Tambah jadwal shift staf</a><br><br>
+        <a class="btn btn-warning btn_tmbahuser" href="tambahjadwalshift.php">Tambah jadwal shift staf</a><br><br>
         <div class="table-responsive">
                 <table class="table table-hover" id="table">
                       <thead>

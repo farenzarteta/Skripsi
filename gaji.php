@@ -53,59 +53,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="blank">
       <div class="blankpage-main">
         <h2>Gaji</h2>
-        <form id="formData" method="POST" action="simpangaji.php">
-                <div class="form-group">
-                  <label for="email">Tanggal:</label>
-                  <input type="date" class="form-control" id="tanggal" name="tanggal">
-                </div>
-                <div class="form-group">
-                  <label for="email">Nama staf:</label>
-                  <select class="form-control" name="id_staf" id="id_staf"> 
-                      <?php 
-                        if(mysqli_num_rows($res2) > 0) {
-                          while($row2=mysqli_fetch_array($res2)) {
-                      ?>
-                            <option value="<?= $row2['ID_STAF'] ?>" id="id_staf"><?= $row2['NAMA_STAF'] ?></option>
-                      <?php
-                          }    
-                        }
-                      ?>
-                  </select>  
-                </div>
-                <div class="form-group">
-                  <label for="email">Gaji pokok:</label>
-                  <input type="text" class="form-control" id="gaji_pokok" name="gaji_pokok">
-                </div>
-                <div class="form-group">
-                  <label for="email">Tunjangan kehadiran:</label>
-                  <input type="text" class="form-control" id="tunjangan_kehadiran" name="tunjangan_kehadiran">
-                </div>
-                <div class="form-group">
-                  <label for="email">Tunjangan jabatan :</label>
-                  <input type="text" class="form-control" id="tunjangan_jabatan" name="tunjangan_jabatan">
-                </div>
-                <div class="form-group">
-                  <label for="email">Tunjangan masa kerja :</label>
-                  <input type="text" class="form-control" id="tunjangan_masa_kerja" name="tunjangan_masa_kerja">
-                </div>
-                <div class="form-group">
-                  <label for="email">Tunjangan fungsional :</label>
-                  <input type="text" class="form-control" id="tunjangan_fungsional" name="tunjangan_fungsional">
-                </div>
-                <div class="form-group">
-                  <label for="email">Insentif:</label>
-                  <input type="text" class="form-control" id="insentif" name="insentif">
-                </div>
-                <div class="form-group">
-                  <label for="email">Bonus:</label>
-                  <input type="text" class="form-control" id="bonus" name="bonus">
-                </div>
-                <div class="alert alert-danger" id="warning" style="display:none">
-                    
-                </div>
-                <input type="submit" id="buttonSimpan" class="btn btn-default" value="Simpan" style="margin-bottom: 20px">
-            </form>
-
+        <a class="btn btn-warning btn_tmbahuser" href="pilihpegawaigaji.php">Ubah Komponen Karyawan</a><br><br>
         <div class="table-responsive">
                 <table class="table table-hover" id="table">
                       <thead>
